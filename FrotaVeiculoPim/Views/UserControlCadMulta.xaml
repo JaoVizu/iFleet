@@ -1,0 +1,151 @@
+﻿<UserControl x:Class="FrotaVeiculoPim.Views.UserControlCadMulta"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:FrotaVeiculoPim.Views"
+             mc:Ignorable="d" 
+              Height="742" Width="1190.684">
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.3}" Margin="1,17,-1,-17">
+            <StackPanel Background="White" Margin="0,-18,0,0">
+                <TextBlock Style="{StaticResource titulo}" Margin="0,30,0,0" >
+                    MULTA
+                </TextBlock>
+                <Separator></Separator>
+                <Grid Margin="60,30,60,0">
+                    <Label Content="Placa do veículo"/>
+                    <ComboBox x:Name="cbPlaca" Margin="179,0,636,0" IsEditable="True"></ComboBox>
+                    <Button Foreground="White"
+                                materialDesign:ShadowAssist.ShadowDepth="Depth2" 
+                                BorderBrush="{x:Null}" Height="Auto" Margin="459,0,455,0"
+                            Click="Button_Click">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4413C7"/>
+                                <GradientStop Color="#FF0C0C6A" Offset="0.8"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        PROSSEGUIR
+                    </Button>
+                </Grid>
+                <GroupBox x:Name="gbEndereco" Height="242" Margin="70,20,137,0" Header="Local" FontSize="24" BorderBrush="#FF000102" Background="#FFF0F0F0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="84*"/>
+                            <ColumnDefinition Width="528*"/>
+                            <ColumnDefinition Width="355*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="CEP:" Margin="3,27,526,105" Grid.ColumnSpan="2"/>
+                        <TextBox Margin="81,31,167,104" x:Name="txtCEP" Background="{x:Null}" Grid.ColumnSpan="2" FontSize="24"/>
+                        <TextBox Margin="491,31,43,104" x:Name="txtCidade" Background="{x:Null}" Grid.ColumnSpan="2" Grid.Column="1" FontSize="24"/>
+                        <Label Content="Cidade:" Margin="381,39,58,102" Grid.Column="1"/>
+                        <Label Content="Estado:" Margin="6,106,517,30" Grid.ColumnSpan="2"/>
+                        <TextBox Margin="25,97,342,39" x:Name="txtEstado" Background="{x:Null}" Grid.Column="1" FontSize="24"/>
+                        <TextBox Margin="351,97,29,39" x:Name="txtEndereço" Background="{x:Null}" Grid.ColumnSpan="2" Grid.Column="1" FontSize="24"/>
+                        <Label Content="Endereço:" Margin="218,107,198,31" Grid.Column="1"/>
+                    </Grid>
+                </GroupBox>
+                <Grid Margin="60,0,60,0" x:Name="gridCadMulta">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Margin="0,0,30,30">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="1" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Margin="0,0,30,30">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="1" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Margin="0,0,30,30">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="142*"/>
+                                <ColumnDefinition Width="331*"/>
+                                <ColumnDefinition Width="33*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Gravidade:" Grid.Column="0" Margin="6,-45,-6,61" Grid.ColumnSpan="3"/>
+                            <TextBox x:Name="txtGravidade" Margin="20,0,0,15" Grid.ColumnSpan="3" FontSize="24"/>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="1" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="52*"/>
+                                <ColumnDefinition Width="483*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Data:" Grid.Column="0" Margin="6,-40,-6,56" Grid.ColumnSpan="2"/>
+                            <DatePicker x:Name="dpData" BorderThickness="0,0,0,3" Margin="9,-3,68,33" FontSize="24" Height="43" Grid.ColumnSpan="2"/>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Grid.Column="1" Foreground="White"
+                                materialDesign:ShadowAssist.ShadowDepth="Depth2" 
+                                Margin="0,0,79,-55"
+                                BorderBrush="{x:Null}" Height="Auto" Click="Button_Click_1">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF4413C7" Offset="0"/>
+                                        <GradientStop Color="#FF0C0C6A" Offset="0.8"/>
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                                SALVAR
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+
+                </Grid>
+
+            </StackPanel>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

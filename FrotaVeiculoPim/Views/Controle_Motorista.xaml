@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="FrotaVeiculoPim.Views.Controle_Motorista"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:FrotaVeiculoPim.Views"
+             mc:Ignorable="d" 
+             Height="742" Width="1190.684">
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.3}" Margin="1,17,-1,-17">
+            <StackPanel Background="White" Margin="0,-18,0,0">
+                <TextBlock Style="{StaticResource titulo}" Margin="0,30,0,0" >
+                    MOTORISTA
+                </TextBlock>
+                <Separator></Separator>
+                <Grid Margin="60,30,60,0">
+
+                    <StackPanel x:Name="cadVeiculo">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Margin="0,0,30,30">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Content="Nome do Motorista:" Grid.Column="0" Margin="0,6,0,10"/>
+                                    <TextBox x:Name="txtNomeMotorista" Grid.Row="1"  Margin="0,0,46,12"></TextBox>
+                                </Grid>
+                            </StackPanel>
+
+
+                            <StackPanel Grid.Row="0" Grid.Column="1" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Content="CNH:" Grid.Column="0" Margin="0,6,0,10"/>
+                                    <TextBox x:Name="txtCNH" Grid.Row="1" Margin="0,0,80,0"></TextBox>
+                                </Grid>
+                            </StackPanel>
+
+
+                            <StackPanel Grid.Row="2" Grid.Column="0" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Grid.Column="1" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Content="CEP:" Grid.Column="0" Margin="-531,-16,531,32"/>
+                                    <TextBox x:Name="txtCEP" Margin="-531,22,611,12"/>
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="3" Grid.Column="0" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Content="Endereço:" Grid.Column="0" Margin="0,6,0,10"/>
+                                    <TextBox x:Name="txtEndereco" Grid.Row="1" Margin="0,0,80,0"></TextBox>
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="3" Grid.Column="1" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Content="Bairro:" Grid.Column="0" Margin="0,6,0,10"/>
+                                    <TextBox x:Name="txtBairro" Grid.Row="1" Margin="0,0,80,0"></TextBox>
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="4" Grid.Column="0" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Content="Cidade:" Grid.Column="0" Margin="540,-172,-540,188"/>
+                                    <TextBox x:Name="txtCidade" Margin="540,-123,-460,148"/>
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Grid.Row="4">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Button Grid.Column="1" Foreground="White"
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth2" 
+                                    Margin="70,258,9,-313"
+                                    BorderBrush="{x:Null}" Height="Auto" Click="Button_Click">
+                                        <Button.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FF4413C7" Offset="0"/>
+                                                <GradientStop Color="#FF0C0C6A" Offset="0.799"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                        SALVAR
+                                    </Button>
+
+                                    <Button Grid.Column="0" Foreground="White"
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth2" 
+                                    Margin="54,255,25,-310"
+                                    BorderBrush="{x:Null}" Height="Auto"
+                                        x:Name="btnListaMotorista">
+                                        <Button.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FF52E6FD" Offset="0"/>
+                                                <GradientStop Color="#FF3157FF" Offset="0.799"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                        LISTAR MOTORISTA
+                                    </Button>
+                                </Grid>
+                            </StackPanel>
+
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Grid.Row="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                        <Label Content="Realizou Exame:" Margin="0,300,535,0" Height="36"/>
+                        <CheckBox x:Name="cbSim" Content="Sim" HorizontalAlignment="Left" Height="45" Margin="0,15,0,0" Width="74" FontSize="16"/>
+                        <CheckBox x:Name="cbNao" Content="Não" HorizontalAlignment="Left" Height="44" Margin="100,-45,0,0" Width="79" FontSize="16"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>
