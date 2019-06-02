@@ -164,36 +164,36 @@
                                 </Grid>
                             </StackPanel>
 
-                            <StackPanel Grid.Column="1" Grid.Row="5" Margin="20,0,0,0" >
-                                <Button x:Name="btnSalvar" Foreground="White"
+
+                            <Button x:Name="btnSalvar" Foreground="White"
                                     materialDesign:ShadowAssist.ShadowDepth="Depth2" 
-                                    Margin="336,154,-1,-209"
+                                    Margin="354,120,1,-63" Grid.Column="1" Grid.Row="5"
                                     BorderBrush="{x:Null}" Height="Auto" Click="BtnSalvar_Click" Content="SALVAR">
-                                    <Button.Background>
-                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                            <GradientStop Color="#FF4413C7" Offset="0"/>
-                                            <GradientStop Color="#FF0C0C6A" Offset="0.799"/>
-                                        </LinearGradientBrush>
-                                    </Button.Background>
-                                </Button>
-                                <Button Foreground="White"
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF4413C7" Offset="0"/>
+                                        <GradientStop Color="#FF0C0C6A" Offset="0.799"/>
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Foreground="White"
                                     materialDesign:ShadowAssist.ShadowDepth="Depth2" 
-                                    Margin="126,154,209,-209"
+                                    Margin="125,120,230,-63" Grid.Column="1" Grid.Row="5"
                                     BorderBrush="{x:Null}" Height="Auto"
                                         x:Name="btnListaMotorista" Click="BtnListaMotorista_Click" Content="LISTAR MOTORISTAS">
-                                    <Button.Background>
-                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                            <GradientStop Color="#FF52E6FD" Offset="0"/>
-                                            <GradientStop Color="#FF3157FF" Offset="0.799"/>
-                                        </LinearGradientBrush>
-                                    </Button.Background>
-                                </Button>
-                            </StackPanel>
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF52E6FD" Offset="0"/>
+                                        <GradientStop Color="#FF3157FF" Offset="0.799"/>
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+
                         </Grid>
                     </StackPanel>
                 </Grid>
             </StackPanel>
-            
+
 
         </materialDesign:TransitioningContent>
     </Grid>
