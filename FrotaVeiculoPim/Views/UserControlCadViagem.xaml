@@ -127,7 +127,7 @@
                                     <DatePicker Grid.Row="1" BorderThickness="0,0,0,3" 
                                                 Margin="0,0,80,0" FontSize="20"
                                                 x:Name="dtDataSaida"  Cursor="Hand"
-                                                SelectedDateFormat="Short"></DatePicker>
+                                                ></DatePicker>
                                 </Grid>
                             </StackPanel>
                             <StackPanel Grid.Column="1" Grid.Row="4">
