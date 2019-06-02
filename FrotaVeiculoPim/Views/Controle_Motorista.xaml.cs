@@ -1,4 +1,5 @@
-﻿using ControllerMotorista.models;
+﻿using ControllerMotorista.dao;
+using ControllerMotorista.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,7 @@ namespace FrotaVeiculoPim.Views
             else
                 exameMedico = "SIM";
 
+            MotoristaDao mdao = new MotoristaDao();
             Motorista motorista = new Motorista()
             {
                 Nome = txtNome.Text,
@@ -59,6 +61,9 @@ namespace FrotaVeiculoPim.Views
             motorista.Endereco.Numero = txtNumero.Text;
             motorista.Endereco.Cidade = txtCidade.Text;
             motorista.Endereco.Cep = txtCep.Text;
+
+            mdao.InserirMotorista(motorista);
+            MessageBox.Show("Motorista inserido com sucesso!!");
         }
     }
 }
