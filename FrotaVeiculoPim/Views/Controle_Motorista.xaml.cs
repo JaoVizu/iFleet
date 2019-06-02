@@ -62,8 +62,23 @@ namespace FrotaVeiculoPim.Views
             motorista.Endereco.Cidade = txtCidade.Text;
             motorista.Endereco.Cep = txtCep.Text;
 
-            mdao.InserirMotorista(motorista);
-            MessageBox.Show("Motorista inserido com sucesso!!");
+            if(verificarCamposNulos())
+                MessageBox.Show("Ainda ha campos para serem preenchidos!!", "Alerta!", MessageBoxButton.OK);
+            else
+            {
+                mdao.InserirMotorista(motorista);
+                MessageBox.Show("Motorista inserido com sucesso!!");
+            }
+
+        }
+
+        private bool verificarCamposNulos()
+        {
+            if (txtNome.Text == "" || txtCpf.Text == "" || txtCnh.Text == "" || txtCatCnh.Text == "" || rbNao.IsChecked == false || rbSim.IsChecked == false
+                || txtRua.Text == "" || txtBairro.Text == "" || txtNumero.Text == "" || txtCidade.Text == "" || txtEmail.Text == "" || txtCep.Text == "")
+                return true;
+            else
+                return false;
         }
     }
 }
