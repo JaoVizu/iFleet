@@ -112,9 +112,9 @@ namespace FrotaVeiculoPim.Views
             dgMotorista.Columns[3].Width = 80;
             dgMotorista.Columns[4].Width = 60;
             dgMotorista.Columns[5].Width = 150;
-            dgMotorista.Columns[6].Width = 150;
-            dgMotorista.Columns[7].Width = 150;
-            dgMotorista.Columns[8].Width = 250;
+            dgMotorista.Columns[6].Width = 90;
+            dgMotorista.Columns[7].Width = 220;
+            dgMotorista.Columns[8].Width = 420;
          
         }
 
@@ -130,6 +130,12 @@ namespace FrotaVeiculoPim.Views
             MotoristaDao mdao = new MotoristaDao();
             dgMotorista.ItemsSource = mdao.BuscarMotorista("%" + txtBuscar.Text + "%");
             AlterarTamanhoColunas();
+        }
+
+        private void BtnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            spListaMotorista.Visibility = Visibility.Hidden;
+            cadMotorista.Visibility = Visibility.Visible;
         }
     }
 }
