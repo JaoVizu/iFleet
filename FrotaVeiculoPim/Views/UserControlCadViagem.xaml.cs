@@ -133,7 +133,7 @@ namespace FrotaVeiculoPim.Views
                 {
                     if (viagemDao.RetornarPlacasEmViagem(cbPlaca.Text))
                     {
-                        MessageBox.Show("A placa ja esta em viagem");
+                        MessageBox.Show("O carro ja esta em viagem!");
                     }
                     else
                     {

@@ -13,5 +13,10 @@ namespace ControllerMotorista.models
         public String Cidade { get; set; }
         public String Bairro { get; set; }
         public String Cep { get; set; }
+
+        public override string ToString()
+        {
+            return Rua + ", " + Numero + ", " + Bairro + ", " + Cidade + " - " + Cep;
+        }
     }
 }

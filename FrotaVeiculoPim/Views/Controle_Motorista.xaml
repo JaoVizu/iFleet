@@ -191,6 +191,32 @@
 
                         </Grid>
                     </StackPanel>
+
+                    <StackPanel x:Name="spListaMotorista" Visibility="Hidden">
+                        <TextBlock Margin="10,0,0,10" Style="{StaticResource tituloFiltro}">FILTROS</TextBlock>
+                        <Grid Margin="0,0,0,30">
+                            <Label x:Name="lblFiltro" Margin="0,0,722,0" Content="Informe o nome do motorista:"></Label>
+                            <TextBox Margin="402,0,369,0" x:Name="txtBuscar" TextChanged="TxtBuscar_TextChanged"/>
+                            <Button Margin="790,0,101,0"
+                                Background="#364EFF" Foreground="White"
+                                materialDesign:ShadowAssist.ShadowDepth="Depth2" 
+                                BorderBrush="{x:Null}" Height="Auto" x:Name="btnBuscar" Click="BtnBuscar_Click">
+                                BUSCAR
+                            </Button>
+                        </Grid>
+                        <DataGrid Margin="0,0,0,30" x:Name="dgMotorista" IsReadOnly="True" MouseDoubleClick="DgMotorista_MouseDoubleClick" CanUserResizeColumns="False" MinColumnWidth="100"/>
+                        <Button x:Name="btnVoltar"  Foreground="White"
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth2" 
+                                    Margin="0,0,964,-55"
+                                    BorderBrush="{x:Null}" Height="Auto" Content="VOLTAR">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF4413C7" Offset="0"/>
+                                    <GradientStop Color="#FF0C0C6A" Offset="0.799"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </StackPanel>
 

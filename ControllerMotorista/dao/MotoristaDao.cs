@@ -60,6 +60,26 @@ namespace ControllerMotorista.dao
             return motorista;
         }
 
+        public List<Motorista> BuscarMotorista(String nome)
+        {
+            List<Motorista> motorista = new List<Motorista>();
+            String query = "select * from motorista where nome LIKE @nome;";
+
+            MySqlConnection conn = new SqlConnection().Criar();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("nome", nome);
+            try
+            {
+                MySqlDataReader dr = cmd.ExecuteReader();
+                motorista = convertDataReaderToList(dr);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return motorista;
+        }
+
         private List<Motorista> convertDataReaderToList(MySqlDataReader dr)
         {
             List<Motorista> motorista = new List<Motorista>();
