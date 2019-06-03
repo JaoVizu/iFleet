@@ -40,7 +40,6 @@ namespace FrotaVeiculoPim.Views
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            string cep = RetirarTracoCep();
             string exameMedico;
             if (rbNao.IsChecked == true)
                 exameMedico = "NAO";
@@ -67,7 +66,7 @@ namespace FrotaVeiculoPim.Views
                 motorista.Endereco.Bairro = txtBairro.Text;
                 motorista.Endereco.Numero = txtNumero.Text;
                 motorista.Endereco.Cidade = txtCidade.Text;
-                motorista.Endereco.Cep = cep;
+                motorista.Endereco.Cep = RetirarTracoCep();
 
                 mdao.InserirMotorista(motorista);
                 MessageBox.Show("Motorista inserido com sucesso!!");
