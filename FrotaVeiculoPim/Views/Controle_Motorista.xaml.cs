@@ -40,6 +40,7 @@ namespace FrotaVeiculoPim.Views
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
+            string cep = RetirarTracoCep();
             string exameMedico;
             if (rbNao.IsChecked == true)
                 exameMedico = "NAO";
@@ -66,7 +67,7 @@ namespace FrotaVeiculoPim.Views
                 motorista.Endereco.Bairro = txtBairro.Text;
                 motorista.Endereco.Numero = txtNumero.Text;
                 motorista.Endereco.Cidade = txtCidade.Text;
-                motorista.Endereco.Cep = txtCep.Text;
+                motorista.Endereco.Cep = cep;
 
                 mdao.InserirMotorista(motorista);
                 MessageBox.Show("Motorista inserido com sucesso!!");
@@ -81,6 +82,23 @@ namespace FrotaVeiculoPim.Views
                 return true;
             else
                 return false;
+        }
+
+        private void limparCampos()
+        {
+            txtNome.Clear();
+            txtCatCnh.Clear();
+            txtCpf.Clear();
+            txtCnh.Clear();
+            txtRua.Clear();
+            txtNumero.Clear();
+            txtBairro.Clear();
+            txtCidade.Clear();
+            txtCep.Clear();
+            txtEmail.Clear();
+            rbNao.IsChecked = null;
+            rbSim.IsChecked = null;
+
         }
 
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
@@ -123,6 +141,17 @@ namespace FrotaVeiculoPim.Views
             MotoristaDao mdao = new MotoristaDao();
             dgMotorista.ItemsSource = mdao.ListarMotorista();
             AlterarTamanhoColunas();
+        }
+
+        private string RetirarTracoCep()
+        {
+            string cep = "";
+
+            if (txtCep.Text.Contains("-"))
+            {
+                cep =  txtCep.Text.Replace("-", "");
+            }
+            return cep;
         }
 
         private void BtnBuscar_Click(object sender, RoutedEventArgs e)
